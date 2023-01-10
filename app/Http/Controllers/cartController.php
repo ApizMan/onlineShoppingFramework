@@ -11,5 +11,11 @@ class cartController extends Controller
         $data_cart = \App\Models\cart::all();
         return view('add_cart',['data_cart'=> $data_cart]);
      }
+
+     public function create(Request $request){
+        \App\Models\cart::create($request->all());
+        return redirect('/cartdata')->with('success','New Data Insert!');
+     }
 }
+
 
