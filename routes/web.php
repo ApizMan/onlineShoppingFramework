@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/hello', function () {
+Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('main', function () {
+    return view('mainpage');
+});
+
+
+Route::get('/profile','App\Http\Controllers\ProfileController@index');
+Route::get('/profile/{id}/edit','App\Http\Controllers\ProfileController@edit');
+Route::post('/profile/{id}/update','App\Http\Controllers\ProfileController@update');
+Route::get('/profile/{id}/view','App\Http\Controllers\ProfileController@view');
