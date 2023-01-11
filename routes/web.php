@@ -20,3 +20,9 @@ Route::get('/', function () {
 Route::get('onlineShoppingFramework/{anynname}', function () {
     return view('cart/add_cart');
 });
+Route::get('onlineShoppingFramework/{anynname}', function () {
+    return view('wishlist/wishlist');
+});
+
+Route::get('/cartdata','App\Http\Controllers\cartController@index');
+Route::post('/cartdata/create','App\Http\Controllers\cartController@create');

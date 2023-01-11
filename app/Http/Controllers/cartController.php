@@ -9,7 +9,7 @@ class cartController extends Controller
 {
     public function index(){
         $data_cart = \App\Models\cart::all();
-        return view('add_cart',['data_cart'=> $data_cart]);
+        return view('Cart/add_cart',['data_cart'=> $data_cart]);
      }
 
      public function create(Request $request){
@@ -17,5 +17,7 @@ class cartController extends Controller
         return redirect('/cartdata')->with('success','New Data Insert!');
      }
 }
+
+
 
 

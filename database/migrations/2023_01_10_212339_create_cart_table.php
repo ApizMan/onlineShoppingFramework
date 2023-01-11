@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('ItemName');
             $table->double('ItemPrice');
-            $table->int("ItemQuantity");
+            $table->string('ItemQuantity');
             $table->text('ItemDescription');
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('add_cart');
+        Schema::dropIfExists('cart');
     }
 };
