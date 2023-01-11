@@ -1,4 +1,4 @@
-@extends('navigation_bar')
+@extends('navigation_bar.navigation_bar_back')
 @section('content')
 <div class="wrapper">
     <div class="card px-4">

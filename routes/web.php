@@ -17,7 +17,7 @@ Route::get('', function () {
     return view('welcome');
 });
 
-Route::get('/payment-method', function () {
+Route::get('onlineShoppingFramework/payment-method', function () {
     return view('payment_method/payment_method');
 });
 Route::get('onlineShoppingFramework/{anynname}', function () {

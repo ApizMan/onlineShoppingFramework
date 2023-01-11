@@ -20,7 +20,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: azure;
+            background-color: rgb(230, 180, 195);
             padding: 10px 20px;
         }
 
@@ -42,7 +42,7 @@
         }
 
         body {
-            background-color: azure;
+            background-color: rgb(230, 180, 195);
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -68,7 +68,7 @@
         }
 
         .topnav a.active {
-        background-color: #04AA6D;
+        background-color: rgb(250, 136, 155);
         color: white;
         }
 
