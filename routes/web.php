@@ -18,5 +18,14 @@ Route::get('', function () {
 });
 
 Route::get('/payment-method', function () {
-    return view('payment_method');
+    return view('payment_method/payment_method');
 });
+Route::get('onlineShoppingFramework/{anynname}', function () {
+    return view('cart/add_cart');
+});
+Route::get('onlineShoppingFramework/{anynname}', function () {
+    return view('wishlist/wishlist');
+});
+
+Route::get('/cartdata','App\Http\Controllers\cartController@index');
+Route::post('/cartdata/create','App\Http\Controllers\cartController@create');
