@@ -1,10 +1,16 @@
-@extends('navigation_bar.navigation_bar_main')
+@extends('navigation_bar.navigation_bar_back')
 @section('content')
 <head>
   <title>
     Shooping Cart
   </title>
 </head>
+@section('title_page')
+<a href="#">Shooping Cart</a>
+@endsection
+@section('button')
+<a href="javascript:history.back()" class="active">< Continue Shooping</a>
+@endsection
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col">
