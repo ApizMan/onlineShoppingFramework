@@ -25,7 +25,7 @@ class ProfileController extends Controller
     public function update(Request $request, $id){
         $data_user = \App\Models\Profile::find($id);
         $data_user->update($request->all());
-        return redirect('/profile')->with('success','User data has been Updated');
+        return redirect('onlineShoppingFramework/profile')->with('success','User data has been Updated');
     }
 
 }

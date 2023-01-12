@@ -12,6 +12,9 @@
         }
     </style>
 </head>
+@section('title_page')
+<a href="#">Payment Method</a>
+@endsection
 <div class="wrapper">
     <div class="card px-4">
         <div class=" my-3">

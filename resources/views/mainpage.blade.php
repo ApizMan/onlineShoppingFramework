@@ -10,9 +10,25 @@
 
     <div class="d-grid gap-2 d-md-block">
         <ul class="nav justify-content-end">
-            <a href="profile">
+            <a href="onlineShoppingFramework/wishlist/{anynname}">
+                <li class="nav-item" href="onlineShoppingFramework/wishlist/{anynname}" role="button">
+                    <button type="button" class="btn btn-outline-danger btn-lg">CART</button>
+                </li>
+            </a>
+        </ul>
+        <br>
+        <ul class="nav justify-content-end">
+            <a href="onlineShoppingFramework/profile">
                 <li class="nav-item" href="profile" role="button">
                     <button type="button" class="btn btn-outline-danger btn-lg">PROFILE</button>
+                </li>
+            </a>
+        </ul>
+        <br>
+        <ul class="nav justify-content-end">
+            <a href="onlineShoppingFramework/payment-method">
+                <li class="nav-item" href="onlineShoppingFramework/payment-method" role="button">
+                    <button type="button" class="btn btn-outline-danger btn-lg">PAYMENT METHOD</button>
                 </li>
             </a>
         </ul>

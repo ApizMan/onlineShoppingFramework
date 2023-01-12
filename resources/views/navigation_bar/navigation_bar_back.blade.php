@@ -95,11 +95,12 @@
 
         <!-- Centered link -->
         <div class="topnav-centered">
-          <a href="#">Payment Method</a>
+            @yield('title_page')
+          {{-- <a href="#">Payment Method</a> --}}
         </div>
         
         <!-- Left-aligned links (default) -->
-        <a href="#home" class="active">< News</a>
+        <a href="javascript:history.back()" class="active">< Back</a>
         
       </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
