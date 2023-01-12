@@ -36,3 +36,5 @@ Route::get('onlineShoppingFramework/wishlist/{anynname}', function () {
 Route::get('/cartdata','App\Http\Controllers\cartController@index');
 Route::post('/cartdata/create','App\Http\Controllers\cartController@create');
 
+Route::get('/categories/eat','App\Http\Controllers\EatController@index');
+
