@@ -17,13 +17,15 @@
             </a>
         </ul>
         <br>
-        <ul class="nav justify-content-end">
-            <a href="onlineShoppingFramework/profile">
-                <li class="nav-item" href="profile" role="button">
-                    <button type="button" class="btn btn-outline-danger btn-lg">PROFILE</button>
-                </li>
-            </a>
-        </ul>
+        <form action="profile/9/view" action="get">
+            <ul class="nav justify-content-end">
+                <a href="profile/9/view">
+                    <li class="nav-item" role="button">
+                        <button type="button" class="btn btn-outline-danger btn-lg">PROFILE</button>
+                    </li>
+                </a>
+            </ul>
+        </form>
         <br>
         <ul class="nav justify-content-end">
             <a href="onlineShoppingFramework/payment-method">
