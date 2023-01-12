@@ -95,7 +95,7 @@
 
         <!-- Centered link -->
         <div class="topnav-centered">
-          <a href="#">Add To Cart</a>
+          <a href="#">Wish List</a>
         </div>
         
         <!-- Left-aligned links (default) -->

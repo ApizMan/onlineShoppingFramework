@@ -26,13 +26,10 @@ Route::post('/profile/{id}/update','App\Http\Controllers\ProfileController@updat
 Route::get('onlineShoppingFramework/payment-method', function () {
     return view('payment_method/payment_method');
 });
-Route::get('onlineShoppingFramework/cart/{anynname}', function () {
-    return view('cart/add_cart');
-});
-Route::get('onlineShoppingFramework/wishlist/{anynname}', function () {
-    return view('wishlist/wishlist');
-});
 
 Route::get('/cartdata','App\Http\Controllers\cartController@index');
 Route::post('/cartdata/create','App\Http\Controllers\cartController@create');
 
+
+Route::get('/wishlist','App\Http\Controllers\wishController@index');
+Route::post('/wishlist/create','App\Http\Controllers\wishController@create');
