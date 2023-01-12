@@ -29,3 +29,7 @@ Route::get('onlineShoppingFramework/{anynname}', function () {
 
 Route::get('/cartdata','App\Http\Controllers\cartController@index');
 Route::post('/cartdata/create','App\Http\Controllers\cartController@create');
+
+
+Route::get('/wishlist','App\Http\Controllers\wishController@index');
+Route::post('/wishlist/create','App\Http\Controllers\wishController@create');

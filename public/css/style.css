@@ -3,3 +3,12 @@
   height: 100vh !important;
   }
   }
+
+  #container {
+    background-color: white;
+    width: 50%; /* Set the width of the container */
+    padding: 20px; /* Add some padding to the container */
+  }
+  
+
+  
