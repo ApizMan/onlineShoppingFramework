@@ -9,13 +9,15 @@
 <body class="p-3 m-0 border-0 bd-example">
 
     <div class="d-grid gap-2 d-md-block">
-        <ul class="nav justify-content-end">
-            <a href="profile">
-                <li class="nav-item" href="profile" role="button">
-                    <button type="button" class="btn btn-outline-danger btn-lg">PROFILE</button>
-                </li>
-            </a>
-        </ul>
+        <form action="profile/9/view" action="get">
+            <ul class="nav justify-content-end">
+                <a href="profile/9/view">
+                    <li class="nav-item" role="button">
+                        <button type="button" class="btn btn-outline-danger btn-lg">PROFILE</button>
+                    </li>
+                </a>
+            </ul>
+        </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
