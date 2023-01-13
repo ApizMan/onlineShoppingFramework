@@ -80,14 +80,134 @@
             </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; place-items: center;">
-            <div class="roundedTitle" style="border: 1px outset black;text-align: center;width: 300px;height: 40px;">
-                Address
+            <div id="body-fave" class="position-absolute top-50 start-50 translate-middle">
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; place-items: center;">
+                    <div class="rounded" style="border: 1px outset black;background-color: lightblue;text-align: center;width: 300px;height: 40px;">
+                        Profile Name
+                    </div>
+                    <div class="rounded" style="border: 1px outset black;background-color: lightblue;text-align: center;width: 300px;height: 40px;">
+                        <input name="ProfileName" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_user->ProfileName}}" readonly>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; place-items: center;">
+                    <div class="rounded"style="border: 1px outset black;background-color: lightblue;text-align: center;width: 300px;height: 40px;">
+                        Email
+                    </div>
+                    <div class="rounded"style="border: 1px outset black;background-color: lightblue;text-align: center;width: 300px;height: 40px;">
+                        <input name="Email" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_user->Email}}" readonly>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; place-items: center;">
+                    <div class="rounded" style="border: 1px outset black;background-color: lightblue;text-align: center;width: 300px;height: 60px;">
+                        Address
+                    </div>
+                    <div class="rounded" style="border: 1px outset black;background-color: lightblue;width: 300px;height: 60px;">
+                        <textarea style="background-color: white;text-align:;" name="Address" disabled="disabled" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$data_user->Address}}</textarea>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; place-items: center;">
+                    <div class="rounded" style="border: 1px outset black;background-color: lightblue;text-align: center;width: 300px;height: 40px;">
+                        Phone Number
+                    </div>
+                    <div class="rounded" style="border: 1px outset black;background-color: lightblue;text-align: center;width: 300px;height: 40px;">
+                        <input name="ProfileName" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_user->PhoneNumber}}" readonly>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; place-items: center;">
+                    <div class="rounded" style="border: 1px outset black;background-color: lightblue;text-align: center;width: 300px;height: 40px;">
+                        Gender
+                    </div>
+                    <div class="rounded" style="border: 1px outset black;background-color: lightblue;text-align: center;width: 300px;height: 40px;">
+                        <input name="ProfileName" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_user->Gender}}" readonly>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; place-items: center;">
+                    <div class="rounded" style="border: 1px outset black;background-color: lightblue;text-align: center;width: 300px;height: 40px;">
+                        Birthday
+                    </div>
+                    <div class="rounded" style="border: 1px outset black;background-color: lightblue;text-align: center;width: 300px;height: 40px;">
+                        <input name="ProfileName" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_user->Birthday}}" readonly>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Edit User Profile
+                    </button>
+                </div >
+
             </div>
-            <div class="roundedDetail" style="border: 1px outset black;text-align: center;width: 300px;height: 40px;">
-                unknow
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit User Profile</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            @if(session('success'))
+                                <div class="alert alert-primary" role="alert">
+                                    {{session('success')}}
+                                </div>
+                            @endif
+
+                            <div class="row justify-content-md-center">
+                                <h1>Edit User Information</h1>
+                                    <form action="/profile/9/update" method="post">
+                                            {!! csrf_field() !!}
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlInput1" class="form-label">Profile Name</label>
+                                                <input name="ProfileName" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_user->ProfileName}}">
+                                            </div>
+                                                    
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                                <input name="Email" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_user->Email}}">
+                                            </div>
+                                                    
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlTextarea1" class="form-label">Address</label>
+                                                <textarea name="Address" class="form-control" id="exampleFormControlTextarea1" rows="3" >{{$data_user->Address}}</textarea>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+                                                <input name="PhoneNumber" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_user->PhoneNumber}}">
+                                            </div>
+                                                    
+                                            <div>
+                                                <label for="exampleFormControlInput1" class="form-label">Gender</label>
+                                                <select name="Gender" class="form-select" aria-label="Default select example">
+                                                    <option selected>Choose Gender</option>
+                                                    <option value="Male" @if($data_user->Gender == 'Male') selected @endif >Male</option>
+                                                    <option value="Female" @if($data_user->Gender == 'Female') selected @endif >Female</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlInput1" class="form-label">Birthday</label>
+                                                <input name="Birthday" type="text" class="form-control" id="exampleFormControlInput1" value="{{$data_user->Birthday}}">
+                                            </div>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Update</button>
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+            
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; place-items: center;">
             <div class="roundedTitle" style="border: 1px outset black;text-align: center;width: 300px;height: 40px;">

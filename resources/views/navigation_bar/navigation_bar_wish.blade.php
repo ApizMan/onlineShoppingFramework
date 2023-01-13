@@ -61,7 +61,7 @@
         float: left;
         color: #333;
         text-align: center;
-        padding: 14px 16px;
+        padding: 20px 20px;
         text-decoration: none;
         font-size: 17px;
         }
@@ -79,7 +79,7 @@
         transform: translate(-50%, -50%);
         }
 /* Responsive navigation menu (for mobile devices) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   
   .topnav-centered a {
     position: relative;
@@ -95,12 +95,11 @@
 
         <!-- Centered link -->
         <div class="topnav-centered">
-            @yield('title_page')
-          {{-- <a href="#">Payment Method</a> --}}
+          <a href="#">Wish List</a>
         </div>
         
         <!-- Left-aligned links (default) -->
-        @yield('button')
+        <a href="#home" class="active">< Continue Shopping</a>
         
       </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

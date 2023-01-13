@@ -13,24 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/onlineShoppingFramework', function () {
+///////////////////////////////////////////////Profile Route/////////////////////////////////////////////////
+Route::get('/', function () {
     return view('mainpage');
 });
 
-
-Route::get('onlineShoppingFramework/profile','App\Http\Controllers\ProfileController@index');
-Route::get('onlineShoppingFramework/profile/{id}/edit','App\Http\Controllers\ProfileController@edit');
-Route::post('onlineShoppingFramework/profile/{id}/update','App\Http\Controllers\ProfileController@update');
-Route::get('onlineShoppingFramework/profile/{id}/view','App\Http\Controllers\ProfileController@view');
+Route::get('/profile','App\Http\Controllers\ProfileController@index');
+Route::get('/profile/{id}/view','App\Http\Controllers\ProfileController@view');
+Route::get('/profile/{id}/edit','App\Http\Controllers\ProfileController@edit');
+Route::post('/profile/{id}/update','App\Http\Controllers\ProfileController@update');
 
 Route::get('onlineShoppingFramework/payment-method', function () {
     return view('payment_method/payment_method');
-});
-Route::get('onlineShoppingFramework/cart/{anynname}', function () {
-    return view('cart/add_cart');
-});
-Route::get('onlineShoppingFramework/wishlist/{anynname}', function () {
-    return view('wishlist/wishlist');
 });
 
 Route::get('/cartdata','App\Http\Controllers\cartController@index');
@@ -55,3 +49,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/wishlist','App\Http\Controllers\wishController@index');
+Route::post('/wishlist/create','App\Http\Controllers\wishController@create');

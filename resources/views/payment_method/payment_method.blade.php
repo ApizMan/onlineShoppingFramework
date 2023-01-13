@@ -15,6 +15,9 @@
 @section('title_page')
 <a href="#">Payment Method</a>
 @endsection
+@section('button')
+<a href="javascript:history.back()" class="active">< Back</a>
+@endsection
 <div class="wrapper">
     <div class="card px-4">
         <div class=" my-3">
