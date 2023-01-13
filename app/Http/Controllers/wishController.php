@@ -17,6 +17,12 @@ class wishController extends Controller
         \App\Models\cart::create($request->all());
         return redirect('/wishlist')->with('success','New Data Insert!');
      }
+
+     public function delete($id){
+        $data_wish = \App\Models\cart::find($id);
+        $data_wish->delete($data_wish);
+        return redirect('/wishlist')->with('success','Product is deleted');
+     }
 }
 
 

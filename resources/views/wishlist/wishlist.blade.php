@@ -5,7 +5,7 @@
   <div class="container">
     <article class="card">
         <header class="card-header"> Wishlist </header>
-        <img src="/images/banner_ecommerce.jpg" alt="image" width="700" height="150">
+        <img src="/images/banner_ecommerce.jpg" alt="image" width="650" height="150">
         <div class="container">
         <div class="row">
             
@@ -35,7 +35,6 @@
                                               <td>{{$wish->ItemPrice}}</td>
                                               <td class="plantmore-product-stock-status"><span class="in-stock">in stock</span></td>
                                               <td class="plantmore-product-add-cart"><a href="/cartdata">add to cart</a></td>
-                                              <td class="plantmore-product-remove"><a href="#"><i class="zmdi zmdi-close"></i></a></td>
                                           </tr>
                                           <tr>
                                               <td class="plantmore-product-thumbnail"><a href="#"><img src="assets/images/other/cart-03.jpg" alt=""></a></td>

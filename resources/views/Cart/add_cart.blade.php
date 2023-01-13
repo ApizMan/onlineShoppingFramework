@@ -45,7 +45,7 @@
                         <div style="width: 80px;">
                           <h5 class="mb-0">{{$cart->ItemPrice}}</h5>
                         </div>
-                        <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                        <a href="cartdata/{{$cart->id}}/delete" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
                       </div>
                     </div>
                   </div>

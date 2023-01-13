@@ -16,6 +16,12 @@ class cartController extends Controller
         \App\Models\cart::create($request->all());
         return redirect('/cartdata')->with('success','New Data Insert!');
      }
+
+     public function delete($id){
+      $data_cart = \App\Models\cart::find($id);
+      $data_cart->delete($data_cart);
+      return redirect('/cartdata')->with('success','Product is deleted');
+   }
 }
 
 
