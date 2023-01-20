@@ -23,6 +23,13 @@ class wishController extends Controller
         $data_wish->delete($data_wish);
         return redirect('/wishlist')->with('success','Product is deleted');
      }
+
+     public function sendData(Request $request)
+     {
+         $data_wissh= $request->all();
+         DB::table('cart')->delete();
+         return view('/cartdata', compact('data_wish'));
+     }
 }
 
 
