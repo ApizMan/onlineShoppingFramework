@@ -26,6 +26,25 @@ Route::post('/profile/{id}/update','App\Http\Controllers\ProfileController@updat
 Route::get('/cartdata','App\Http\Controllers\cartController@index');
 Route::post('/cartdata/create','App\Http\Controllers\cartController@create');
 
+Route::get('/Home', function () {
+    return view('\Home.Homepage');});
+
+Route::get('/History', function () {
+        return view('\Purchase.PurchaseHistory');});
+
+Route::get('/PayHist','App\Http\Controllers\PurchaseHis@index');
+
+Route::get('/PayHist/{id}','App\Http\Controllers\PurchaseHis@read');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
 Route::get('/wishlist','App\Http\Controllers\wishController@index');
 Route::post('/wishlist/create','App\Http\Controllers\wishController@create');
