@@ -9,7 +9,7 @@ class ProfileController extends Controller
     public function index()
     {
         $data_user = \App\Models\Profile::all();
-        return view ('mainpage',['data_user'=> $data_user]);
+        return view ('profile/show',['data_user'=> $data_user]);
     }
 
 

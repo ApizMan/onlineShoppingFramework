@@ -1,4 +1,4 @@
-@extends('Home.layout')
+@extends('Home.mainpage')
 @section('content')
 <<div class="container">
     <article class="card">

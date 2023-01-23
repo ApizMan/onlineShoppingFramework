@@ -9,7 +9,7 @@
 <a href="#">Shooping Cart</a>
 @endsection
 @section('button')
-<a href="javascript:history.back()" class="active">< Continue Shooping</a>
+<a href="/" class="active">< Continue Shooping</a>
 @endsection
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">

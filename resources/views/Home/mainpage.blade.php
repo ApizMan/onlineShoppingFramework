@@ -34,7 +34,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+      <a href="/" class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>Fave<span></span></h1>
@@ -42,7 +42,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="Home">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li class="dropdown"><a href="#"><span>Category</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="#">Eat</a></li>
@@ -51,38 +51,19 @@
               <li><a href="#">Retail</a></li>
             </ul>
           </li>
-          <li><a href="onlineShoppingFramework/profile">Profile</a></li>
+          <li><a href="/profile">Profile</a></li>
           <li class="dropdown"><a href="#"><span>Payment</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="onlineShoppingFramework/payment-method">Payment Method</a></li>
+              <li><a href="/paymentMethod">Payment Method</a></li>
               <li><a href="PayHist">Purchase History</a></li>
             </ul>
           </li>
-          <li><a href="onlineShoppingFramework/wishlist/{anynname}">Wishlist</a></li>
+          <li><a href="/wishlist">Wishlist</a></li>
           <li><a href="">Message</a></li>
-          <li><a href="onlineShoppingFramework/wishlist/{anynname}">Cart</a></li>
+          <li><a href="/cartdata">Cart</a></li>
           <li>
-            @if (Route::has('login'))
-            <div>
-
-              @auth
-              <a href="{{ url('/dashboard') }}" class="btn-book-a-table">Dashboard</a>
-              @else
-
-              <a href="{{ route('login') }}" class="btn-book-a-table">Log in</a>
+            
           </li>
-          <li>
-            @if (Route::has('register'))
-
-
-            <a href="{{ route('register') }}" class="btn-book-a-table">Register</a>
-          </li>
-          </li>
-          @endif
-
-          @endauth
-            </div>
-           @endif
         </ul>
 
     </nav><!-- .navbar -->
@@ -170,5 +151,13 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 </body>
+<script>
+  var botmanWidget ={
+      aboutText: 'Chating Box',
+      introMessage: "Hi! I'm BotMan, Welcome to our page. What can i help you?"
+  };
+</script>
+
+<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 
 </html>
