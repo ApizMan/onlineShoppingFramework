@@ -66,7 +66,8 @@
             <div>
 
               @auth
-              <a href="{{ url('/dashboard') }}" class="btn-book-a-table">Dashboard</a>
+              <a href="{{ url('/Home') }}" >
+              </a>
               @else
 
               <a href="{{ route('login') }}" class="btn-book-a-table">Log in</a>

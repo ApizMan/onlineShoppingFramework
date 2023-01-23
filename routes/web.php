@@ -38,7 +38,11 @@ Route::get('/History', function () {
 
 Route::get('/PayHist','App\Http\Controllers\PurchaseHis@index');
 
-Route::get('/PayHist/{id}','App\Http\Controllers\PurchaseHis@read');
+Route::get('/{id}','App\Http\Controllers\PurchaseHis@read');
+
+Route::post('/update/{id}','App\Http\Controllers\PurchaseHis@update');
+
+Route::get('/delete/{id}','App\Http\Controllers\PurchaseHis@destroy');
 
 Route::middleware([
     'auth:sanctum',

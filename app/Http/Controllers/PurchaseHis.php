@@ -14,11 +14,18 @@ class PurchaseHis extends Controller
     public function read($id)
     {
         $purchase = \App\Models\Payment::find($id);
-        return view('Purchase.PurchaseHistory',['purchase'=> $purchase]);
-
+        return view('Purchase.PurchaseHistory', ['purchase' => $purchase]);
     }
-    public function edit($id){
+    public function update(Request $request, $id)
+    {
         $purchase = \App\Models\Payment::find($id);
-        return view('',['purchase'=> $purchase]);
+        $purchase ->update($request->all());
+        return redirect('PayHist')->with('success', 'Update Sudah');
     }
+    public function destroy($id)
+{
+    $purchase = \App\Models\Payment::find($id);
+    $purchase ->delete($purchase);
+    return redirect('PayHist')->with('success','Sudah Delete Data Bos');
+}
 }

@@ -28,7 +28,7 @@
                   <td>{{ $data_pur->status }}</td>
                   <td>{{ $data_pur->track }}</td>
                   <td>{{ $data_pur->total }}</td>
-                  <td><a href="PayHist/{{$data_pur->id}}">View</a></td>
+                  <td><a href="{{$data_pur->id}}">Edit</a><br><td><a href="delete/{{$data_pur->id}}" onclick="return confirm('Confirm Delete')">Delete</td></td>
                 </tr>
                 @endforeach
               </tbody>
