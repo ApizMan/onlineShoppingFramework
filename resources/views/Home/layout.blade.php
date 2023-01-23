@@ -54,7 +54,7 @@
           <li><a href="onlineShoppingFramework/profile">Profile</a></li>
           <li class="dropdown"><a href="#"><span>Payment</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="onlineShoppingFramework/payment-method">Payment Method</a></li>
+              <li><a href="paymentMethod">Payment Method</a></li>
               <li><a href="PayHist">Purchase History</a></li>
             </ul>
           </li>
@@ -66,7 +66,7 @@
             <div>
 
               @auth
-              <a href="{{ url('/Home') }}" >
+              <a href="{{ url('/Home') }}" class="btn-book-a-table">Log in
               </a>
               @else
 
