@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BotManController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,10 @@ Route::get('/profile','App\Http\Controllers\ProfileController@index');
 Route::get('/profile/{id}/view','App\Http\Controllers\ProfileController@view');
 Route::get('/profile/{id}/edit','App\Http\Controllers\ProfileController@edit');
 Route::post('/profile/{id}/update','App\Http\Controllers\ProfileController@update');
+
+///////////////////////////////////////////////Chat Box/////////////////////////////////////////////////
+
+Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 

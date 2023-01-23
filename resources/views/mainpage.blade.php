@@ -1,25 +1,36 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>mainpage</title>
-</head>
-<body class="p-3 m-0 border-0 bd-example">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <title>mainpage</title>
+    </head>
+    <body class="p-3 m-0 border-0 bd-example">
 
-    <div class="d-grid gap-2 d-md-block">
-        <form action="profile/9/view" action="get">
-            <ul class="nav justify-content-end">
-                <a href="profile/9/view">
-                    <li class="nav-item" role="button">
-                        <button type="button" class="btn btn-outline-danger btn-lg">PROFILE</button>
-                    </li>
-                </a>
-            </ul>
-        </form>
-    </div>
+        <div class="d-grid gap-2 d-md-block">
+            <form action="profile/9/view" action="get">
+                <ul class="nav justify-content-end">
+                    <a href="profile/9/view">
+                        <li class="nav-item" role="button">
+                            <button type="button" class="btn btn-outline-danger btn-lg">PROFILE</button>
+                        </li>
+                    </a>
+                </ul>
+            </form>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </body>
+    
+    <script>
+        var botmanWidget ={
+            aboutText: 'Chating Box',
+            introMessage: "Hi! I'm BotMan, Welcome to our page. What can i help you?"
+        };
+    </script>
+  
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+      
 </html>
