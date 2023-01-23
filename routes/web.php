@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BotManController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,23 +13,30 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-///////////////////////////////////////////////Profile Route/////////////////////////////////////////////////
-Route::get('/', function () {
-    return view('mainpage');
-});
-
 Route::get('/profile','App\Http\Controllers\ProfileController@index');
 Route::get('/profile/{id}/view','App\Http\Controllers\ProfileController@view');
 Route::get('/profile/{id}/edit','App\Http\Controllers\ProfileController@edit');
 Route::post('/profile/{id}/update','App\Http\Controllers\ProfileController@update');
 
+///////////////////////////////////////////////Chat Box/////////////////////////////////////////////////
+
+Route::match(['get', 'post'], '/botman', 'BotManController@handle');
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Route::get('onlineShoppingFramework/payment-method', function () {
+    return view('payment_method/payment_method');
+});
+Route::get('onlineShoppingFramework/{anynname}', function () {
+    return view('cart/add_cart');
+});
+Route::get('onlineShoppingFramework/{anynname}', function () {
+    return view('wishlist/wishlist');
+});
+
 Route::get('/cartdata','App\Http\Controllers\cartController@index');
 Route::post('/cartdata/create','App\Http\Controllers\cartController@create');
 Route::get('/cartdata/{id}/delete','App\Http\Controllers\cartController@delete');
-
-Route::get('/Home', function () {
-    return view('\Home.Homepage');});
 
 Route::get('/History', function () {
         return view('\Purchase.PurchaseHistory');});
@@ -43,8 +51,8 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+        return view('Home.Homepage');
+    })->name('Home.Homepage');
 });
 
 Route::get('/wishlist','App\Http\Controllers\wishController@index');

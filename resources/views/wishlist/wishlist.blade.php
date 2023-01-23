@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 @extends('navigation_bar.navigation_bar_back')
-=======
-@extends('navigation_bar.navigation_bar_main')
->>>>>>> origin/ammar
 @section('content')
     @section('title_page')
     <a href="#">Wishlist</a>
