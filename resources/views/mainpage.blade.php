@@ -28,8 +28,8 @@
         </form>
         <br>
         <ul class="nav justify-content-end">
-            <a href="onlineShoppingFramework/payment-method">
-                <li class="nav-item" href="onlineShoppingFramework/payment-method" role="button">
+            <a href="/paymentMethod">
+                <li class="nav-item" href="/paymentMethod" role="button">
                     <button type="button" class="btn btn-outline-danger btn-lg">PAYMENT METHOD</button>
                 </li>
             </a>

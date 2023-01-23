@@ -35,9 +35,7 @@
                     <div class="d-flex justify-content-between">
                       <div class="d-flex flex-row align-items-center">
                         <div>
-                          <img
-                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
-                            class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                        <img class="card-img-right" style="width: 65px" src="{{$cart->picture}}" alt="" />
                         </div>
                         <div class="ms-1">
                           <h5>{{$cart->ItemName}}</h5>
@@ -51,7 +49,7 @@
                         <div style="width: 80px;">
                           <h5 class="mb-0">{{$cart->ItemPrice}}</h5>
                         </div>
-                        <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                        <a href="cartdata/{{$cart->id}}/delete" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
                       </div>
                     </div>
                   </div>

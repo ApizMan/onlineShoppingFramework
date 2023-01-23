@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cart', function (Blueprint $table) {
-            $table->id();
-            $table->string('picture');
-            $table->string('ItemName');
-            $table->double('ItemPrice');
-            $table->string('ItemQuantity');
-            $table->text('ItemDescription');
+        Schema::create('paymentMethods', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('CardColor');
+            $table->string('TypeCard');
+            $table->string('CardClass');
+            $table->string('CardNumber');
+            $table->string('CardHolderName');
+            $table->string('ExpiredDate');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cart');
+        Schema::dropIfExists('paymentMethods');
     }
 };
