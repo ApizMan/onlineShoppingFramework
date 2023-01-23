@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class paymentMethod extends Model
+class paymentmethods extends Model
 {
     use HasFactory;
-    protected $fillable = ['holder', 'card_number', 'expired_date',];
+    protected $fillable = ['CardColor', 'TypeCard', 'CardClass', 'CardNumber', 'CardHolderName', 'ExpiredDate'];
 }

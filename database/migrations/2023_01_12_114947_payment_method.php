@@ -15,9 +15,12 @@ return new class extends Migration
     {
         Schema::create('paymentMethods', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('holder');
-            $table->string('card_number');
-            $table->string('expired_date');
+            $table->string('CardColor');
+            $table->string('TypeCard');
+            $table->string('CardClass');
+            $table->string('CardNumber');
+            $table->string('CardHolderName');
+            $table->string('ExpiredDate');
             $table->timestamps();
         });
     }
