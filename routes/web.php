@@ -13,6 +13,8 @@ use App\Http\Controllers\BotManController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('Home/Homepage');});
 Route::get('/profile','App\Http\Controllers\ProfileController@index');
 Route::get('/profile/{id}/view','App\Http\Controllers\ProfileController@view');
 Route::get('/profile/{id}/edit','App\Http\Controllers\ProfileController@edit');
@@ -49,15 +51,18 @@ Route::post('/update/{id}','App\Http\Controllers\PurchaseHis@update');
 
 Route::get('/delete/{id}','App\Http\Controllers\PurchaseHis@destroy');
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('Home.Homepage');
-    })->name('Home.Homepage');
-});
+Route::get('/Home', function () {
+    return view('Home/Homepage');});
+
+//  Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('Home.Homepage');
+//     })->name('Home.Homepage');
+// });
 
 Route::get('/wishlist','App\Http\Controllers\wishController@index');
 Route::post('/wishlist/create','App\Http\Controllers\wishController@create');

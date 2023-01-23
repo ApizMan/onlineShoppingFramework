@@ -1,4 +1,4 @@
-@extends('Home.layout')
+@extends('Home.mainpage')
 @section('content')
 <section id="main" class="hero d-flex align-items-center section-bg">
     <div class="container">
