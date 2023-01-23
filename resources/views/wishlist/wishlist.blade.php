@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @extends('navigation_bar.navigation_bar_back')
+=======
+@extends('navigation_bar.navigation_bar_main')
+>>>>>>> origin/ammar
 @section('content')
     @section('title_page')
     <a href="#">Wishlist</a>
@@ -10,10 +14,15 @@
   <div class="container">
     <article class="card">
         <header class="card-header"> Wishlist </header>
-        <img src="/images/banner_ecommerce.jpg" alt="image" width="700" height="150">
+        <img src="/images/banner_ecommerce.jpg" alt="image" width="650" height="150">
         <div class="container">
         <div class="row">
             
+        @if(session('success'))
+    <div class="alert alert-primary" role="alert">
+    {{session('success')}}
+    </div>
+        @endif
             <div class="card-body">
                 <div class="card">
                     <div class="card-header">Shopping wishlist</div>
@@ -33,31 +42,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    
                                 @foreach($data_wish as $wish)
                                 <tr>
-                                              <td class="plantmore-product-thumbnail"><a href="#"><img src="assets/images/other/cart-03.jpg" alt=""></a></td>
+                                
+                                              <td><img class="card-img-right" style="width: 65px" src="{{$wish->picture}}" alt="" /></td>
                                               <td>{{$wish->ItemName}}</td>
                                               <td>{{$wish->ItemPrice}}</td>
                                               <td class="plantmore-product-stock-status"><span class="in-stock">in stock</span></td>
                                               <td class="plantmore-product-add-cart"><a href="/cartdata">add to cart</a></td>
-                                              <td class="plantmore-product-remove"><a href="#"><i class="zmdi zmdi-close"></i></a></td>
+                                              <td><a href="wishlist/{{$wish->id}}/delete" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a></td>
                                           </tr>
-                                          <tr>
-                                              <td class="plantmore-product-thumbnail"><a href="#"><img src="assets/images/other/cart-03.jpg" alt=""></a></td>
-                                              <td>{{$wish->ItemName}}</td>
-                                              <td>{{$wish->ItemPrice}}</td>
-                                              <td class="plantmore-product-stock-status"><span class="in-stock">in stock</span></td>
-                                              <td class="plantmore-product-add-cart"><a href="/cartdata">add to cart</a></td>
-                                              <td class="plantmore-product-remove"><a href="#"><i class="zmdi zmdi-close"></i></a></td>
-                                          </tr>
-                                          <tr>
-                                              <td class="plantmore-product-thumbnail"><a href="#"><img src="assets/images/other/cart-03.jpg" alt=""></a></td>
-                                              <td>{{$wish->ItemName}}</td>
-                                              <td>{{$wish->ItemPrice}}</td>
-                                              <td class="plantmore-product-stock-status"><span class="in-stock">in stock</span></td>
-                                              <td class="plantmore-product-add-cart"><a href="/cartdata">add to cart</a></td>
-                                              <td class="plantmore-product-remove"><a href="#"><i class="zmdi zmdi-close"></i></a></td>
-                                          </tr>
+                                          </form>
+
+                                          
                                           @endforeach
                                 </tbody>
                             </table>

@@ -25,6 +25,7 @@ Route::post('/profile/{id}/update','App\Http\Controllers\ProfileController@updat
 
 Route::get('/cartdata','App\Http\Controllers\cartController@index');
 Route::post('/cartdata/create','App\Http\Controllers\cartController@create');
+Route::get('/cartdata/{id}/delete','App\Http\Controllers\cartController@delete');
 
 Route::get('/Home', function () {
     return view('\Home.Homepage');});
@@ -54,3 +55,5 @@ Route::post('/paymentMethod/create','App\Http\Controllers\paymentMethodControlle
 Route::get('/paymentMethod/{id}/edit','App\Http\Controllers\paymentMethodController@edit');
 Route::post('/paymentMethod/{id}/update','App\Http\Controllers\paymentMethodController@update');
 Route::get('/paymentMethod/{id}/delete','App\Http\Controllers\paymentMethodController@delete');
+Route::get('/wishlist/{id}/delete','App\Http\Controllers\wishController@delete');
+Route::post('/wishlist/sendData', 'App\Http\Controllers\wishController@sendData');
