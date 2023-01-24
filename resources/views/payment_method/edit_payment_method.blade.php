@@ -17,7 +17,7 @@
         </style>
     </head>
     @section('title_page')
-    <a href="#">Edit Payment Method</a>
+    <a href="">Edit Payment Method</a>
     @endsection
     @section('button')
     <a href="/paymentMethod" class="active">< Back</a>

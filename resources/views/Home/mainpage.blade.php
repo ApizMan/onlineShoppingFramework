@@ -34,36 +34,56 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <a href="/" class="logo d-flex align-items-center me-auto me-lg-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>Fave<span></span></h1>
-      </a>
+      @if (Auth::check())
+        <a href="/dashboard" class="logo d-flex align-items-center me-auto me-lg-0">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <h1>Fave<span></span></h1>
+        </a>
+      @else
+        <a href="/" class="logo d-flex align-items-center me-auto me-lg-0">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <h1>Fave<span></span></h1>
+        </a>
+      @endif
+      
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li class="dropdown"><a href="#"><span>Category</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Eat</a></li>
-              <li><a href="#">Beauty</a></li>
-              <li><a href="#">Massage</a></li>
-              <li><a href="#">Retail</a></li>
-            </ul>
-          </li>
-          <li><a href="/profile">Profile</a></li>
-          <li class="dropdown"><a href="#"><span>Payment</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="/paymentMethod">Payment Method</a></li>
-              <li><a href="PayHist">Purchase History</a></li>
-            </ul>
-          </li>
-          <li><a href="/wishlist">Wishlist</a></li>
-          <li><a href="">Message</a></li>
-          <li><a href="/cartdata">Cart</a></li>
-          <li>
+            <li>
+              @if (Auth::check())
+                <a href="/dashboard">Home</a>
+              @else
+                <a href="/">Home</a>
+              @endif
+            </li>
+            <li class="dropdown"><a href="#"><span>Category</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+              <ul>
+                <li><a href="/categories/eat">Eat</a></li>
+              </ul>
+            </li>
+            <li><a href="/profile">Profile</a></li>
+            <li class="dropdown"><a href="#"><span>Payment</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+              <ul>
+                @if (Auth::check())
+                  <li><a href="/paymentMethod">Payment Method</a></li>
+                @endif
+                <li><a href="PayHist">Purchase History</a></li>
+              </ul>
+            </li>
+            <li><a href="/wishlist">Wishlist</a></li>
+            <li><a href="">Message</a></li>
+            <li><a href="/cartdata">Cart</a></li>
+            @if (Auth::check())
+               <li><a href="/logout">Logout</a></li>
+            @else
+                <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+                  <li><a href="/login" class="btn-book-a-table">Login</a></li>
+                  <li><a href="/register" class="btn-book-a-table">Register</a></li>
+                </div>
+            @endif
             
-          </li>
         </ul>
 
     </nav><!-- .navbar -->
@@ -127,16 +147,7 @@
 
       </div>
     </div>
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Fave</span></strong>. All Rights Reserved
-      </div>
-    </div>
-
   </footer><!-- End Footer -->
-
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <div id="preloader"></div>
 

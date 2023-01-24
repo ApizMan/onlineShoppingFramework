@@ -7,7 +7,7 @@
           <h2 data-aos="fade-up">Ecommerce<br>Anything! Anywhere!</h2>
           <p data-aos="fade-up" data-aos-delay="100">Buy and spend your money</p>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="#book-a-table" class="btn-book-a-table">Purchase</a>
+            <a href="/categories/eat" class="btn-book-a-table">Purchase</a>
           </div>
         </div>
         <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">

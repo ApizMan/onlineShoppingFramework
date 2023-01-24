@@ -17,10 +17,10 @@
         </style>
     </head>
     @section('title_page')
-    <a href="#">Payment Method</a>
+    <a href="/paymentMethod">Payment Method</a>
     @endsection
     @section('button')
-    <a href="/" class="active">< Back</a>
+    <a href="/dashboard" class="active">< Back</a>
     @endsection
     <div class="wrapper">
         <div class="card px-4">
