@@ -69,6 +69,7 @@
                 <div class="text-start text-dark">
                     <span class="fw-bolder fs-6">Home</h1>
                     <span class="fw-bolder fs-6">/ Eat</h1>
+                    <span class="fw-bolder fs-6">/ Asian</h1>
                 </div>
             </div>
         </header>
@@ -77,6 +78,7 @@
             <div class="container px-4 px-lg-5 mt-1">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 @foreach($data_eat as $eat)
+                @if($eat->category == 'Asian')
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
@@ -102,6 +104,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                     @endforeach
                 </div>
             </div>

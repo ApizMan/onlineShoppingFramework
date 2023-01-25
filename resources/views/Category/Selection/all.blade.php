@@ -69,6 +69,7 @@
                 <div class="text-start text-dark">
                     <span class="fw-bolder fs-6">Home</h1>
                     <span class="fw-bolder fs-6">/ Eat</h1>
+                    <span class="fw-bolder fs-6">/ All</h1>
                 </div>
             </div>
         </header>

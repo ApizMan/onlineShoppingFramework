@@ -69,6 +69,7 @@
                 <div class="text-start text-dark">
                     <span class="fw-bolder fs-6">Home</h1>
                     <span class="fw-bolder fs-6">/ Eat</h1>
+                    <span class="fw-bolder fs-6">/ Korean</h1>
                 </div>
             </div>
         </header>
@@ -77,6 +78,7 @@
             <div class="container px-4 px-lg-5 mt-1">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 @foreach($data_eat as $eat)
+                @if($eat->choice == 'Korean')
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
@@ -102,6 +104,20 @@
                             </div>
                         </div>
                     </div>
+                    @else
+                    <div class="card">
+                    <div class="card-header">
+                        Sorry
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                        <p>So many things that we never will undo I know you're sorry, I'm sorry too.</p>
+                        <footer class="blockquote-footer"> Bob Dylan <cite title="Source Title">'Mississippi', 2001</cite></footer>
+                        </blockquote>
+                    </div>
+                    </div>
+                    @break
+                    @endif
                     @endforeach
                 </div>
             </div>
