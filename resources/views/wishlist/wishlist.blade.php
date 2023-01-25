@@ -1,4 +1,4 @@
-@extends('navigation_bar.navigation_bar_back')
+@extends('Home.mainpage')
 @section('content')
     @section('title_page')
     <a href="#">Wishlist</a>

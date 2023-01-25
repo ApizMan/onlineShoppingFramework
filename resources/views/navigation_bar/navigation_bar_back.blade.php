@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Fave</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +24,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: rgb(230, 180, 195);
+            background-color: rgb(228, 228, 228);
             padding: 10px 20px;
         }
 
@@ -45,7 +46,7 @@
         }
 
         body {
-            background-color: rgb(230, 180, 195);
+            background-color: rgb(228, 228, 228);
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -95,18 +96,6 @@
     </style>
 </head>
 <body>
-    <div class="topnav">
-
-        <!-- Centered link -->
-        <div class="topnav-centered">
-            @yield('title_page')
-          {{-- <a href="#">Payment Method</a> --}}
-        </div>
-        
-        <!-- Left-aligned links (default) -->
-        @yield('button')
-        
-    </div>
     @if (session('success'))
         <div id="submit" class="alert alert-success alert-dismissible fade show" role="alert">
             {{session('success')}}

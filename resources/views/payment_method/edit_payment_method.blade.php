@@ -17,7 +17,7 @@
         </style>
     </head>
     @section('title_page')
-    <a href="">Edit Payment Method</a>
+    <a href="#">Edit Payment Method</a>
     @endsection
     @section('button')
     <a href="/paymentMethod" class="active">< Back</a>
@@ -58,8 +58,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" id="update" class="btn3 btn-success mb-4" style="color: white;">Update</button>
+                    
                 </div>
             </form>
+            <button type="button" id="back" class="btn2 btn-danger mb-4" style="color: white;"><a href="/paymentMethod" style="text-decoration: none; color:white;">Back</a></button>
         </div>
     </div>
 @endsection

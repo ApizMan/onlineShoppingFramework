@@ -49,9 +49,17 @@ Route::get('wishlist/{anynname}', function () {
     return view('wishlist/wishlist');
 });
 
-Route::get('/cartdata','App\Http\Controllers\cartController@index');
-Route::post('/cartdata/create','App\Http\Controllers\cartController@create');
-Route::get('/cartdata/{id}/delete','App\Http\Controllers\cartController@delete');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function(){
+    Route::get('/cartdata','App\Http\Controllers\cartController@index');
+    Route::post('/cartdata/create','App\Http\Controllers\cartController@create');
+    Route::get('/cartdata/{id}/delete','App\Http\Controllers\cartController@delete');
+});
+
+
 
 Route::get('/Home', function () {
     return view('\Home.Homepage');});

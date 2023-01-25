@@ -1,4 +1,4 @@
-@extends('navigation_bar.navigation_bar_back')
+@extends('Home.back')
 @section('content')
     <head>
         <meta charset="UTF-8">

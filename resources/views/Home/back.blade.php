@@ -26,6 +26,44 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  
+
+  <style>
+    
+    .topnav a:hover {
+        background-color: #f2f2f2;
+        color: black;
+        }
+
+        .topnav {
+        position: relative;
+        overflow: hidden;
+        background-color: #f2f2f2;
+        }
+
+        .topnav a {
+        float: left;
+        color: #333;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        }
+
+        .topnav a.active {
+        background-color: #e16c89;
+        color: white;
+        }
+
+        .topnav-centered a {
+        float: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+  </style>
 </head>
 
 <body>
@@ -34,65 +72,33 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      @if (Auth::check())
-        <a href="/dashboard" class="logo d-flex align-items-center me-auto me-lg-0">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.png" alt=""> -->
-          <h1>Fave<span></span></h1>
-        </a>
-      @else
-        <a href="/" class="logo d-flex align-items-center me-auto me-lg-0">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.png" alt=""> -->
-          <h1>Fave<span></span></h1>
-        </a>
-      @endif
-      
+        @if (Auth::check())
+            <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+                <a href="/dashboard" class="btn-book-a-table" style="text-decoration: none;"> < Back </a>
+            </div>
+        @else
+            <div class="d-flex">
+                <a href="/" class="btn-book-a-table"> @yield('button') </a>
+            </div>
+        @endif
 
-      <nav id="navbar" class="navbar">
-        <ul>
-            <li>
-              @if (Auth::check())
-                <a href="/dashboard">Home</a>
-              @else
-                <a href="/">Home</a>
-              @endif
-            </li>
-            <li class="dropdown"><a href="#"><span>Category</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-              <ul>
-                <li><a href="/categories/eat">Eat</a></li>
-              </ul>
-            </li>
-            <li><a href="/profile">Profile</a></li>
-            <li class="dropdown"><a href="#"><span>Payment</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-              <ul>
-                @if (Auth::check())
-                  <li><a href="/paymentMethod">Payment Method</a></li>
-                @endif
-                <li><a href="PayHist">Purchase History</a></li>
-              </ul>
-            </li>
-            <li><a href="/wishlist">Wishlist</a></li>
-            <li><a href="/cartdata">Cart</a></li>
-            @if (Auth::check())
-               <li><a href="/logout">Logout</a></li>
-            @else
-                <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                  <li><a href="/login" class="btn-book-a-table">Login</a></li>
-                  <li><a href="/register" class="btn-book-a-table">Register</a></li>
-                </div>
-            @endif
-            
-        </ul>
-
-    </nav><!-- .navbar -->
-    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <!-- Centered link -->
+        <div class="topnav-centered">
+            @yield('title_page')
+          {{-- <a href="#">Payment Method</a> --}}
+        </div>
+        
+    {{-- <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i> --}}
     <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
     </div>
   </header><!-- End Header -->
   <section id="hero" class="hero d-flex align-items-center section-bg">
     <div class="container">
-    @yield('content')
+        <div class="container1">
+            <div class="container2">
+                @yield('content')
+            </div>
+        </div>
     </div>
   </section><!-- End Hero Section -->
   <!-- ======= Footer ======= -->
@@ -161,13 +167,4 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 </body>
-<script>
-  var botmanWidget ={
-      aboutText: 'Chating Box',
-      introMessage: "Hi! I'm BotMan, Welcome to our page. What can i help you?"
-  };
-</script>
-
-<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
-
 </html>
