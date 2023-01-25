@@ -12,13 +12,45 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
-    </head>
+        <style>          
+          .topnav {
+            overflow: hidden;
+            background-color: #333;
+          }
+          
+          .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+          }
+          
+          .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+          }
+          
+          .topnav a.active {
+            background-color: #e16c89;
+            color: white;
+          }
+          </style>
+      </head>
     <body>
     @if(session('success'))
       <div class="alert alert-primary" role="alert">
       {{session('success')}}
       </div>
     @endif
+    <div class="topnav">
+      @if (Auth::check())
+        <a class="active" href="/dashboard"> < Back</a>
+      @else
+        <a class="active" href="/"> < Back</a>
+      @endif
+    </div>
           <!-- Navigation-->
           <nav class="navbar navbar-expand-lg bg-light text-dark">
     <!-- Container wrapper -->

@@ -63,19 +63,17 @@
                 <li><a href="/categories/eat">Eat</a></li>
               </ul>
             </li>
+            @if (Auth::check())
             <li><a href="/profile">Profile</a></li>
             <li class="dropdown"><a href="#"><span>Payment</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
               <ul>
-                @if (Auth::check())
-                  <li><a href="/paymentMethod">Payment Method</a></li>
-                @endif
-                <li><a href="PayHist">Purchase History</a></li>
+                <li><a href="/paymentMethod">Payment Method</a></li>
+                  <li><a href="PayHist">Purchase History</a></li>
               </ul>
             </li>
             <li><a href="/wishlist">Wishlist</a></li>
             <li><a href="/cartdata">Cart</a></li>
-            @if (Auth::check())
-               <li><a href="/logout">Logout</a></li>
+            <li><a href="/logout" style="color: red;">Logout</a></li>
             @else
                 <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
                   <li><a href="/login" class="btn-book-a-table">Login</a></li>

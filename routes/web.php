@@ -19,10 +19,26 @@ use App\Http\Controllers\BotManController;
 //     return view('Home.homepage');
 // });
 
+//If user are not login, Homepage Display
 Route::get('/', function () {
     return view('Home.homepage');
 });
 
+//If user are login, Homepage Display
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('Home/homepage');
+    })->name('dashboard');
+});
+
+//Eat Interface
+Route::get('/categories/eat','App\Http\Controllers\EatController@index');
+
+//Profile
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -42,13 +58,7 @@ Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-Route::get('cart/{anynname}', function () {
-    return view('cart/add_cart');
-});
-Route::get('wishlist/{anynname}', function () {
-    return view('wishlist/wishlist');
-});
-
+//Cart
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -61,31 +71,21 @@ Route::middleware([
 
 
 
-Route::get('/Home', function () {
-    return view('\Home.Homepage');});
 
 Route::get('/History', function () {
         return view('\Purchase.PurchaseHistory');});
 
-Route::get('/PayHist','App\Http\Controllers\PurchaseHis@index');
 
-Route::get('/PayHist/{id}','App\Http\Controllers\PurchaseHis@read');
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('Home/homepage');
-    })->name('dashboard');
+//Purchase History
+Route::middleware([])->group(function(){
+    Route::get('/PayHist','App\Http\Controllers\PurchaseHis@index');
+    Route::get('/PayHist/{id}','App\Http\Controllers\PurchaseHis@read');
+    Route::get('/PayHist/{id}/edit','App\Http\Controllers\PurchaseHis@edit');
+    Route::post('/update/{id}','App\Http\Controllers\PurchaseHis@update');
+    Route::get('/delete/{id}','App\Http\Controllers\PurchaseHis@destroy');
 });
 
-Route::get('/wishlist','App\Http\Controllers\wishController@index');
-Route::post('/wishlist/create','App\Http\Controllers\wishController@create');
-
-
-
+//Payment Method
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -99,10 +99,21 @@ Route::middleware([
 });
 
 
-Route::get('/wishlist/{id}/delete','App\Http\Controllers\wishController@delete');
-Route::post('/wishlist/sendData', 'App\Http\Controllers\wishController@sendData');
-Route::get('/categories/eat','App\Http\Controllers\EatController@index');
+//Wish List
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function(){
+    Route::get('/wishlist/{id}/delete','App\Http\Controllers\wishController@delete');
+    Route::post('/wishlist/sendData', 'App\Http\Controllers\wishController@sendData');
+    Route::get('/wishlist','App\Http\Controllers\wishController@index');
+    Route::post('/wishlist/create','App\Http\Controllers\wishController@create');
+});
 
+
+
+//If user want to logout
 Route::get('logout', function ()
 {
     auth()->logout();

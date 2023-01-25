@@ -10,6 +10,6 @@ class EatController extends Controller
     public function index(){
         $data_eat = \App\Models\eat::all();
         // dd($data_eat);
-        return view('Category/eat', ['data_eat'=> $data_eat]);
+        return view('category/eat', ['data_eat'=> $data_eat]);
     }
 }

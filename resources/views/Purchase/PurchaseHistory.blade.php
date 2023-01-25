@@ -1,4 +1,4 @@
-@extends('Home.mainpage')
+@extends('Purchase.purchase_layout')
 @section('content')
 <<div class="container">
     <article class="card">
@@ -6,4 +6,4 @@
         <
     </article>
     </div>
-    @endsection
+@endsection
