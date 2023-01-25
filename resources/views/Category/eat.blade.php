@@ -134,6 +134,9 @@
                                         <div class="fw-normal">Available in {{$eat->numlocation}} locations</div>
                                         <div class="badge text-dark position-absolute" style="bottom: 0.5rem; right: 0.5rem">{{$eat->numbought}} bought</div>
                                     </div>
+                                    <span>
+                                      <button  class="btn btn-danger"><a href="/cartdata" style="text-decoration: none; color:white;">Buy</a></button>
+                                    </span>
                                 </div>
                             </div>
                         </div>

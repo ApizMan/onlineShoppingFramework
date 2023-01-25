@@ -1,4 +1,4 @@
-@extends('Home.back')
+@extends('Purchase.purchase_layout')
 @section('content')
     <head>
         <meta charset="UTF-8">

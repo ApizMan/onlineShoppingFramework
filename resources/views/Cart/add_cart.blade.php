@@ -9,7 +9,7 @@
 <a href="#">Shooping Cart</a>
 @endsection
 @section('button')
-< Continue Shooping
+<a href="/categories/eat" class="btn-book-a-table"> < Continue Shopping </a>
 @endsection
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">

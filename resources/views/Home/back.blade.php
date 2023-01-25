@@ -72,15 +72,9 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-        @if (Auth::check())
             <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                <a href="/dashboard" class="btn-book-a-table" style="text-decoration: none;"> < Back </a>
+                @yield('button')
             </div>
-        @else
-            <div class="d-flex">
-                <a href="/" class="btn-book-a-table"> @yield('button') </a>
-            </div>
-        @endif
 
         <!-- Centered link -->
         <div class="topnav-centered">

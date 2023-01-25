@@ -72,7 +72,6 @@
               </ul>
             </li>
             <li><a href="/wishlist">Wishlist</a></li>
-            <li><a href="/cartdata">Cart</a></li>
             <li><a href="/logout" style="color: red;">Logout</a></li>
             @else
                 <div class="d-flex" data-aos="fade-up" data-aos-delay="200">

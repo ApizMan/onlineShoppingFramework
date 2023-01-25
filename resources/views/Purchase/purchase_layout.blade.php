@@ -46,9 +46,7 @@
     @endif
     <div class="topnav">
       @if (Auth::check())
-        <a class="active" href="/dashboard"> < Back</a>
-      @else
-        <a class="active" href="/"> < Back</a>
+        <a class="active" href="/PayHist"> < Back</a>
       @endif
     </div>
     <section class="py-1">

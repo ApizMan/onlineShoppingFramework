@@ -66,7 +66,7 @@
     <a href="/paymentMethod" style="text-decoration: none; color:#e16c89">Payment Method</a>
     @endsection
     @section('button')
-    < Back
+    <a href="/dashboard" class="btn-book-a-table" style="text-decoration: none;"> < Back </a>
     @endsection
     <div class="wrapper" style="color: pink">
         <div class="card px-4">
