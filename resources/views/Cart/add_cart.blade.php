@@ -1,4 +1,4 @@
-@extends('navigation_bar.navigation_bar_main')
+@extends('Home.back')
 @section('content')
 
 <head>
@@ -6,8 +6,17 @@
     Shopping Cart
   </title>
 </head>
+<<<<<<< HEAD
 
 
+=======
+@section('title_page')
+<a href="#">Shooping Cart</a>
+@endsection
+@section('button')
+<a href="/categories/eat" class="btn-book-a-table"> < Continue Shopping </a>
+@endsection
+>>>>>>> 1cad16ab5897767d27abe8e8b3d4ac614492b19d
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col">
@@ -74,7 +83,7 @@
                         class="fab fa-cc-amex fa-2x me-2"></i></a>
                     <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a>
 
-                    <form class="mt-4">
+                    <form class="mt-4" method="POST">
                       <div class="form-outline form-white mb-4">
                         <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
                           placeholder="Cardholder's Name" />
@@ -104,8 +113,33 @@
                         </div>
                       </div>
 
+                      <hr class="my-4">
+
+                      <div class="d-flex justify-content-between">
+                        <p class="mb-2">Subtotal</p>
+                        <p class="mb-2">$4798.00</p>
+                      </div>
+  
+                      <div class="d-flex justify-content-between">
+                        <p class="mb-2">Shipping</p>
+                        <p class="mb-2">$20.00</p>
+                      </div>
+  
+                      <div class="d-flex justify-content-between mb-4">
+                        <p class="mb-2">Total(Incl. taxes)</p>
+                        <p class="mb-2">$4818.00</p>
+                      </div>
+  
+                      <button type="button" class="btn btn-info btn-block btn-lg">
+                        <div class="d-flex justify-content-between">
+                          <span>$4818.00</span>
+                          <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+                        </div>
+                      </button>
+
                     </form>
 
+<<<<<<< HEAD
                     <hr class="my-4">
 
                     <div class="d-flex justify-content-between">
@@ -129,6 +163,9 @@
                         <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
                       </div>
                     </button>
+=======
+                   
+>>>>>>> 1cad16ab5897767d27abe8e8b3d4ac614492b19d
 
                   </div>
                 </div>

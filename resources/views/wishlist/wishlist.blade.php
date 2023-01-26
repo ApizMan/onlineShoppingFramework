@@ -1,6 +1,11 @@
-@extends('navigation_bar.navigation_bar_main')
+@extends('Home.mainpage')
 @section('content')
-<main>
+    @section('title_page')
+    <a href="#">Wishlist</a>
+    @endsection
+    @section('button')
+    <a href="javascript:history.back()" class="active">< Back</a>
+    @endsection
   <div class="wishlist-main-content section-ptb">
   <div class="container">
     <article class="card">
@@ -58,6 +63,5 @@
         </div>
     </div>
     </article>
-</div>
-  </main>  
+</div> 
 @endsection
