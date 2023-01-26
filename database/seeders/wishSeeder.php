@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Str;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 
-class cartSeeder extends Seeder
+class wishSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,7 +17,7 @@ class cartSeeder extends Seeder
     {
         $faker = Faker::create();
         foreach(range(1,3) as $value){
-            DB::table('cart') -> insert([
+            DB::table('wish') -> insert([
                 'picture' => $faker->image(null, 360, 360, 'cloth', true, 'jpg'),
                 'ItemName' => $faker->words(),
                 'ItemPrice' => $faker->randomFloat(1, 30),
@@ -27,4 +27,3 @@ class cartSeeder extends Seeder
         }
     }
 }
-

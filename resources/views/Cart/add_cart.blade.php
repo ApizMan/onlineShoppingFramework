@@ -1,10 +1,13 @@
 @extends('navigation_bar.navigation_bar_main')
 @section('content')
+
 <head>
   <title>
-    Shooping Cart
+    Shopping Cart
   </title>
 </head>
+
+
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col">
@@ -22,7 +25,7 @@
                         class="text-body">price <i class="fas fa-angle-down mt-1"></i></a></p>
                   </div>
                 </div>
-
+                
                 @foreach($data_cart as $cart)
                 <div class="card mb-3">
                   <div class="card-body">
@@ -43,17 +46,17 @@
                         <div style="width: 80px;">
                           <h5 class="mb-0">{{$cart->ItemPrice}}</h5>
                         </div>
-                        <a href="cartdata/{{$cart->id}}/delete" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                        <a href="cartdata/{{$cart->id}}/delete" style="color: #cecece;" onclick="return confirm('Confrim delete')"><i class="fas fa-trash-alt"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
                 @endforeach
                
-
               </div>
               <div class="col-lg-50">
 
+              <form action="/cartdata/create" method="POST">
                 <div class="card bg-primary text-white rounded-3">
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-4">
@@ -95,7 +98,7 @@
                         <div class="col-md-6">
                           <div class="form-outline form-white">
                             <input type="password" id="typeText" class="form-control form-control-lg"
-                              placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+                              placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3"/>
                             <label class="form-label" for="typeText">Cvv</label>
                           </div>
                         </div>
@@ -107,29 +110,29 @@
 
                     <div class="d-flex justify-content-between">
                       <p class="mb-2">Subtotal</p>
-                      <p class="mb-2">$4798.00</p>
+                      <p class="mb-2">RM</p>
                     </div>
 
                     <div class="d-flex justify-content-between">
                       <p class="mb-2">Shipping</p>
-                      <p class="mb-2">$20.00</p>
+                      <p class="mb-2">RM</p>
                     </div>
 
                     <div class="d-flex justify-content-between mb-4">
                       <p class="mb-2">Total(Incl. taxes)</p>
-                      <p class="mb-2">$4818.00</p>
+                      <p class="mb-2">RM</p>
                     </div>
 
                     <button type="button" class="btn btn-info btn-block btn-lg">
                       <div class="d-flex justify-content-between">
-                        <span>$4818.00</span>
+                        
                         <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
                       </div>
                     </button>
 
                   </div>
                 </div>
-
+              </form>
               </div>
 
             </div>
