@@ -14,7 +14,7 @@ class cartController extends Controller
 
      public function create(Request $request){
         \App\Models\cart::create($request->all());
-        return redirect('/cartdata')->with('success','New Data Insert!');
+        return redirect('/')->with('success','New Data Insert!');
      }
 
      public function update(Request $request, $id){

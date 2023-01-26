@@ -14,7 +14,7 @@
         <div class="container">
         <div class="row">
             
-        @if(session('success'))
+    @if(session('success'))
     <div class="alert alert-primary" role="alert">
     {{session('success')}}
     </div>
@@ -38,7 +38,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+                                
                                 @foreach($data_wish as $wish)
                                 <tr>
                                 
@@ -47,12 +47,13 @@
                                               <td>{{$wish->ItemPrice}}</td>
                                               <td class="plantmore-product-stock-status"><span class="in-stock">in stock</span></td>
                                               <td class="plantmore-product-add-cart"><a href="/cartdata">add to cart</a></td>
-                                              <td><a href="wishlist/{{$wish->id}}/delete" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a></td>
+                                              <td><a href="wishlist/{{$wish->id}}/delete" style="color: red;" onclick="return confirm('Confrim delete')">Delete</a></td>
                                           </tr>
-                                          </form>
+                                        
 
                                           
                                           @endforeach
+                                          
                                 </tbody>
                             </table>
                         </div>

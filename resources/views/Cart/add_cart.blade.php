@@ -1,16 +1,16 @@
 @extends('Home.back')
 @section('content')
+@section('button')
+    <a href="/dashboard" class="btn-book-a-table" style="text-decoration: none;"> < Continue Shopping </a>
+    @endsection
+    @section('title_page')
+    <a href="/paymentMethod" style="text-decoration: none; color:#e16c89">Cart</a>
+    @endsection
 <head>
   <title>
-    Shooping Cart
+    Shopping Cart
   </title>
 </head>
-@section('title_page')
-<a href="#">Shooping Cart</a>
-@endsection
-@section('button')
-<a href="/categories/eat" class="btn-book-a-table"> < Continue Shopping </a>
-@endsection
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col">
@@ -28,14 +28,14 @@
                         class="text-body">price <i class="fas fa-angle-down mt-1"></i></a></p>
                   </div>
                 </div>
-
+                
                 @foreach($data_cart as $cart)
                 <div class="card mb-3">
                   <div class="card-body">
                     <div class="d-flex justify-content-between">
                       <div class="d-flex flex-row align-items-center">
                         <div>
-                        <img class="card-img-right" style="width: 65px" src="{{$cart->picture}}" alt="" />
+                        <img class="card-img-right" style="width: 65px; height:65px" src="{{$cart->picture}}" alt="" />
                         </div>
                         <div class="ms-1">
                           <h5>{{$cart->ItemName}}</h5>
@@ -49,17 +49,18 @@
                         <div style="width: 80px;">
                           <h5 class="mb-0">{{$cart->ItemPrice}}</h5>
                         </div>
-                        <a href="cartdata/{{$cart->id}}/delete" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                        <a href="cartdata/{{$cart->id}}/delete" style="color: #cecece;" onclick="return confirm('Confrim delete')"><i class="fas fa-trash-alt"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
                 @endforeach
                
-
               </div>
               <div class="col-lg-50">
 
+              <form action="/cartdata/create" method="POST">
+                {{csrf_field()}}
                 <div class="card bg-primary text-white rounded-3">
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-4">
@@ -77,9 +78,9 @@
                         class="fab fa-cc-amex fa-2x me-2"></i></a>
                     <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a>
 
-                    <form class="mt-4" method="POST">
+                    <form class="mt-4" method="POST" action="/cartdata/create">
                       <div class="form-outline form-white mb-4">
-                        <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                        <input name="ItemName" type="text" id="typeName" class="form-control form-control-lg" siez="17"
                           placeholder="Cardholder's Name" />
                         <label class="form-label" for="typeName">Cardholder's Name</label>
                       </div>
@@ -101,7 +102,7 @@
                         <div class="col-md-6">
                           <div class="form-outline form-white">
                             <input type="password" id="typeText" class="form-control form-control-lg"
-                              placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+                              placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3"/>
                             <label class="form-label" for="typeText">Cvv</label>
                           </div>
                         </div>
@@ -109,27 +110,27 @@
 
                       <hr class="my-4">
 
+                    <div class="d-flex justify-content-between">
+                      <p class="mb-2">Subtotal</p>
+                      <p class="mb-2">$4798.00</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                      <p class="mb-2">Shipping</p>
+                      <p class="mb-2">$20.00</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-4">
+                      <p class="mb-2">Total(Incl. taxes)</p>
+                      <p class="mb-2">$4818.00</p>
+                    </div>
+
+                    <button type="submit" class="btn btn-info btn-block btn-lg">
                       <div class="d-flex justify-content-between">
-                        <p class="mb-2">Subtotal</p>
-                        <p class="mb-2">$4798.00</p>
+                        <span>$4818.00</span>
+                        <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
                       </div>
-  
-                      <div class="d-flex justify-content-between">
-                        <p class="mb-2">Shipping</p>
-                        <p class="mb-2">$20.00</p>
-                      </div>
-  
-                      <div class="d-flex justify-content-between mb-4">
-                        <p class="mb-2">Total(Incl. taxes)</p>
-                        <p class="mb-2">$4818.00</p>
-                      </div>
-  
-                      <button type="button" class="btn btn-info btn-block btn-lg">
-                        <div class="d-flex justify-content-between">
-                          <span>$4818.00</span>
-                          <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
-                        </div>
-                      </button>
+                    </button>
 
                     </form>
 
@@ -137,7 +138,7 @@
 
                   </div>
                 </div>
-
+              </form>
               </div>
 
             </div>
