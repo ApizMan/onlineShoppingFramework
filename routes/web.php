@@ -37,6 +37,19 @@ Route::middleware([
 
 //Eat Interface
 Route::get('/categories/eat','App\Http\Controllers\EatController@index');
+Route::get('/categories/all','App\Http\Controllers\EatController@all');
+Route::get('/categories/buffet','App\Http\Controllers\EatController@buffet');
+Route::get('/categories/asian','App\Http\Controllers\EatController@asian');
+Route::get('/categories/japanese','App\Http\Controllers\EatController@japanese');
+Route::get('/categories/korean','App\Http\Controllers\EatController@korean');
+
+Route::get('/categories/{id}/view','App\Http\Controllers\EatController@view');
+Route::get('/categories/review','App\Http\Controllers\ReviewController@view');
+Route::get('/categories/{id}/edit','App\Http\Controllers\ReviewController@edit');
+Route::post('/categories/{id}/update','App\Http\Controllers\ReviewController@update');
+Route::get('/categories/{id}/delete','App\Http\Controllers\ReviewController@delete');
+
+
 
 //Profile
 Route::middleware([

@@ -1,9 +1,13 @@
 @extends('category.eat_layout')
+@section('location')
+    / Japanese
+@endsection
 @section('content')
 <section class="py-1">
   <div class="container px-4 px-lg-5 mt-1">
       <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
       @foreach($data_eat as $eat)
+      @if($eat->choice == 'Japanese')
           <div class="col mb-5">
               <div class="card h-100">
                   <!-- Sale badge-->
@@ -26,13 +30,10 @@
                               <div class="badge text-dark position-absolute" style="bottom: 0.5rem; right: 0.5rem">{{$eat->numbought}} bought</div>
                           </div>
                       </div>
-                      <div>
-                        <button class="btn btn-danger"><a href="/cartdata" style="text-decoration: none; color:white;">Buy</a></button>
-                      </div>
                   </div>
-                  
               </div>
           </div>
+          @endif
           @endforeach
       </div>
   </div>
