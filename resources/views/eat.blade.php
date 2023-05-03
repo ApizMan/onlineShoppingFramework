@@ -14,6 +14,12 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
     </head>
     <body>
+    @if(session('success'))
+    <div class="alert alert-primary" role="alert">
+    {{session('success')}}
+    </div>
+    @endif
+    @foreach($data_eat as $eat)
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-light text-dark">
   <!-- Container wrapper -->
@@ -39,21 +45,21 @@
       <!-- Left links -->
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a href="/categories/all" role="button" class="btn btn-light" >All</a>
+          <a class="nav-link" href="#">All</a>
         </li>
         <li class="nav-item">
-        <a href="/categories/buffet" role="button" class="btn btn-light" >Buffet</a>
+          <a class="nav-link" href="#">Buffet</a>
         </li>
         <li class="nav-item">
-        <a href="/categories/asian" role="button" class="btn btn-light" >Asian</a>
+          <a class="nav-link" href="#">Asian</a>
         </li>
         <!-- Navbar dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
           <!-- Dropdown menu -->
           <ul class="dropdown-menu">
-            <li><a href="/categories/japanese" role="button"class="btn btn-white" >Japanese</a></li>
-            <li><a href="/categories/korean" role="button" class="btn btn-white" >Korean</a></li>
+            <li><a class="dropdown-item" href="#">Japanese</a></li>
+            <li><a class="dropdown-item" href="#">Korean</a></li>
           </ul>
         </li>
       </ul>
@@ -67,8 +73,7 @@
         <header class="bg-gradient-light py-1">
             <div class="container px-1 px-lg-5 mt-3">
                 <div class="text-start text-dark">
-                    <span class="fw-bolder fs-6">Home</h1>
-                    <span class="fw-bolder fs-6">/ Eat</h1>
+                    <h1 class="fw-bolder fs-6">Home / Eat / All</h1>
                 </div>
             </div>
         </header>
@@ -76,14 +81,13 @@
         <section class="py-1">
             <div class="container px-4 px-lg-5 mt-1">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                @foreach($data_eat as $eat)
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
                             <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; left: 0.5rem">{{$eat->discount}}% OFF</div>
                             <div class="badge bg-success text-white position-absolute" style="top: 2.0rem; left: 0.5rem"><i class="bi bi-star-fill"></i> {{$eat->rate}}</div>
                             <!-- Product image-->
-                            <a href="/categories/{{$eat->id}}/view"><img class="card-img-top" src="{{$eat->picture}}" alt="..." /></a>
+                            <img class="card-img-top" src="{{$eat->picture}}" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-1">
                                 <div class="text-start">
@@ -102,10 +106,8 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
-                </div>
-            </div>
         </section>
+        @endforeach
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>

@@ -1,14 +1,8 @@
-@extends('Home.back')
+@extends('navigation_bar.navigation_bar_main')
 @section('content')
-@section('button')
-    <a href="/dashboard" class="btn-book-a-table" style="text-decoration: none;"> < Continue Shopping </a>
-    @endsection
-    @section('title_page')
-    <a href="/paymentMethod" style="text-decoration: none; color:#e16c89">Cart</a>
-    @endsection
 <head>
   <title>
-    Shopping Cart
+    Shooping Cart
   </title>
 </head>
   <div class="container py-5 h-100">
@@ -16,6 +10,13 @@
       <div class="col">
         <div class="card">
           <div class="card-body p-4">
+
+            <div class="row">
+
+              <div class="col-lg-7">
+                <h5 class="mb-3"><a href="#!" class="text-body"><i
+                      class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
+                <hr>
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
                   <div>
@@ -28,39 +29,40 @@
                         class="text-body">price <i class="fas fa-angle-down mt-1"></i></a></p>
                   </div>
                 </div>
-                
+
                 @foreach($data_cart as $cart)
                 <div class="card mb-3">
                   <div class="card-body">
                     <div class="d-flex justify-content-between">
                       <div class="d-flex flex-row align-items-center">
                         <div>
-                        <img class="card-img-right" style="width: 65px; height:65px" src="{{$cart->picture}}" alt="" />
+                          <img
+                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+                            class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
                         </div>
-                        <div class="ms-1">
+                        <div class="ms-3">
                           <h5>{{$cart->ItemName}}</h5>
                           <p class="small mb-0">{{$cart->ItemDescription}}</p>
                         </div>
                       </div>
                       <div class="d-flex flex-row align-items-center">
-                        <div style="width: 30px;">
+                        <div style="width: 50px;">
                           <h5 class="fw-normal mb-0">{{$cart->ItemQuantity}}</h5>
                         </div>
                         <div style="width: 80px;">
                           <h5 class="mb-0">{{$cart->ItemPrice}}</h5>
                         </div>
-                        <a href="cartdata/{{$cart->id}}/delete" style="color: #cecece;" onclick="return confirm('Confrim delete')"><i class="fas fa-trash-alt"></i></a>
+                        <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
                 @endforeach
                
-              </div>
-              <div class="col-lg-50">
 
-              <form action="/cartdata/create" method="POST">
-                {{csrf_field()}}
+              </div>
+              <div class="col-lg-5">
+
                 <div class="card bg-primary text-white rounded-3">
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-4">
@@ -78,9 +80,9 @@
                         class="fab fa-cc-amex fa-2x me-2"></i></a>
                     <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a>
 
-                    <form class="mt-4" method="POST" action="/cartdata/create">
+                    <form class="mt-4">
                       <div class="form-outline form-white mb-4">
-                        <input name="ItemName" type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                        <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
                           placeholder="Cardholder's Name" />
                         <label class="form-label" for="typeName">Cardholder's Name</label>
                       </div>
@@ -102,13 +104,15 @@
                         <div class="col-md-6">
                           <div class="form-outline form-white">
                             <input type="password" id="typeText" class="form-control form-control-lg"
-                              placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3"/>
+                              placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
                             <label class="form-label" for="typeText">Cvv</label>
                           </div>
                         </div>
                       </div>
 
-                      <hr class="my-4">
+                    </form>
+
+                    <hr class="my-4">
 
                     <div class="d-flex justify-content-between">
                       <p class="mb-2">Subtotal</p>
@@ -125,20 +129,16 @@
                       <p class="mb-2">$4818.00</p>
                     </div>
 
-                    <button type="submit" class="btn btn-info btn-block btn-lg">
+                    <button type="button" class="btn btn-info btn-block btn-lg">
                       <div class="d-flex justify-content-between">
                         <span>$4818.00</span>
                         <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
                       </div>
                     </button>
 
-                    </form>
-
-                   
-
                   </div>
                 </div>
-              </form>
+
               </div>
 
             </div>

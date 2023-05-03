@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Fave</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,21 +13,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
-    
-      <!-- Favec -->
-  <link href="assets/img/fave.png" rel="icon">
-  <link href="assets/img/fave.png" rel="apple-touch-icon">
     <style>
         .container{
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: rgb(228, 228, 228);
+            background-color: rgb(230, 180, 195);
             padding: 10px 20px;
         }
 
-        .btn1 {
+        .btn {
             width: 100%;
             height: 50px;
             border: 1px solid #0093E9;
@@ -40,13 +35,13 @@
             font-weight: 500;
         }
 
-        .btn1:hover {
+        .btn:hover {
             color: #fff;
             background-color: #0093E9;
         }
 
         body {
-            background-color: rgb(228, 228, 228);
+            background-color: rgb(230, 180, 195);
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -72,7 +67,7 @@
         }
 
         .topnav a.active {
-        background-color: #e16c89;
+        background-color: rgb(250, 136, 155);
         color: white;
         }
 
@@ -96,16 +91,18 @@
     </style>
 </head>
 <body>
-    @if (session('success'))
-        <div id="submit" class="alert alert-success alert-dismissible fade show" role="alert">
-            {{session('success')}}
+    <div class="topnav">
+
+        <!-- Centered link -->
+        <div class="topnav-centered">
+            @yield('title_page')
+          {{-- <a href="#">Payment Method</a> --}}
         </div>
-    @elseif (session('delete'))
-        <div id="submit" class="alert alert-warning alert-dismissible fade show" role="alert">
-            {{session('delete')}}
-        </div>
-    @endif
-    
+        
+        <!-- Left-aligned links (default) -->
+        <a href="javascript:history.back()" class="active">< Back</a>
+        
+      </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 
